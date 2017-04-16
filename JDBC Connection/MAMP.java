@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import com.mysql.*;
 
+
 public class JDBCConnect {
 	
 	public Connection connect() {
