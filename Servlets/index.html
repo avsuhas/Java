@@ -1,10 +1,113 @@
 <!DOCTYPE html>
 <html>
-<head>
+
 <meta charset="UTF-8">
-<title>SimpleWebApplication</title>
+<head>
+
 </head>
 <body>
-Simple Web Application says hello!
+<svg height="130" width="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"
+      style="stop-color:rgb(10,100,0);stop-opacity:1" />
+      <stop offset="100%"
+      style="stop-color:rgb(255,200,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="45" font-family="Verdana"
+  x="115" y="86">Servlet</text>
+
+</svg>
+<form method="post" action="xmlServletpath">
+
+<table width="450px">
+	
+	<tr>
+ 	<td valign="top">
+  	<label for="first_name">First Name *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input  type="text" name="first_name" maxlength="50" size="30">
+ 	</td>
+	</tr>
+
+	<tr>
+ 	<td valign="top">
+  	<label for="last_name">Last Name *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input  type="text" name="last_name" maxlength="50" size="30">
+ 	</td>
+	</tr>
+
+	<tr>
+ 	<td valign="top">
+  	<label for="Sex">Sex *</label>
+ 	</td>
+ 	<td valign="top">
+ 	<input type="radio" name="Sex" value="Male">Male </input>
+	<input type="radio" name="Sex" value="Female">Female </input>
+ 	</td>
+	</tr>
+
+	<tr>
+ 	<td valign="top">
+  	<label for="Address">Address *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input  type="text" name="Address" maxlength="50" size="30">
+ 	</td>
+	</tr>
+	
+	
+	<tr>
+ 	<td valign="top">
+  	<label for="City">City *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input  type="text" name="City" maxlength="50" size="30">
+ 	</td>
+	</tr>
+	
+	<tr>
+ 	<td valign="top">
+  	<label for="Country">Country *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input  type="text" name="Country" maxlength="50" size="30">
+ 	</td>
+	</tr>
+
+	<tr>
+ 	<td valign="top">
+  	<label for="Hobbies">Hobbies *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input type="checkbox" name="Hobbies" value="Chess">Chess<br>
+    <input type="checkbox" name="Hobbies" value="Tennis">Tennis<br>
+   	<input type="checkbox" name="Hobbies" value="Soccer">Soccer<br>
+ 	<input type="checkbox" name="Hobbies" value="Baseball">Baseball<br>
+ 	<input type="checkbox" name="Hobbies" value="Skiing">Skiing<br>	
+ 	</td>
+	</tr>
+	
+	
+	<tr>
+ 	<td valign="top">
+  	
+ 	</td>
+ 	<td valign="top">
+  	 	<input type="submit" value = "submit" />
+ 	</td>
+	</tr>
+
+ 	</table>
+ 			
+
+</form>
+
+
 </body>
 </html>
