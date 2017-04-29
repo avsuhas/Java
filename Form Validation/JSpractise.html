@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Client Side Validation</title>
+    <style type="text/css">
+    html, body {
+    	margin: 0px;
+    	background: #ebebeb;
+    }
+      .ulTag {
+      	list-style-type: none;
+      	background: #0E283C;
+      	margin: 0px;
+      }
+      .liTag {
+        display: inline-block;
+            padding: 15px 25px;
+            background: grey;
+            border-radius: 5px;
+            margin: 10px 0px 10px 0px;
+            text-align: right;
+        } 
+        .sbmtBtn {
+        	width: 90px;
+		    height: 35px;
+		    border-radius: 10px;
+		    font-size: 17px;
+		    margin-top: 20px;
+}
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var ddl = document.getElementById('mycontainer').getElementsByTagName("select")[0];
+            for (var i = 1; i <= 100; i++) {
+                var theOption = new Option;
+                theOption.text = i;
+                theOption.value = i;
+                ddl.options[i] = theOption;
+            }
+        };
+
+	function validateForm() {
+
+    var x=document.forms["myForm"]["firstName"].value;
+    var y=document.forms["myForm"]["last_name"].value;
+    var z=document.forms["myForm"]["phoneno"].value;
+    var exp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+    if (x==null || x=="") {
+      alert("Name must be filled out");
+      return false;
+    }
+    if(!isNaN(x) || !isNaN(y)){
+      alert("Please Enter Only Characters")
+      return false;
+    }  
+    if (y==null || y=="") {
+      alert("Password name must be filled out");
+      return false;
+    }
+
+    if(z.match(exp)) {
+    return true;
+  	}
+ 	 else {
+  	  alert("Must be 10 digit");
+    	return false;
+  	}
+}
+    </script>
+</head>
+
+<body>
+	<div class="ulTag">
+	<ul>
+		<li class="liTag"> <a href="#" style="color:black;">Home</a></li>
+		<li class="liTag"><a href="#" style="color:black;">Login</a></li>
+		<li class="liTag"><a href="#" style="color:black;">About</a></li>
+		<li class="liTag"><a href="#" style="color:black;">Contact</a></li>
+	</ul>
+	</div>
+
+<div align ="center"/>
+<h1> Client Side Form Validation </h1>
+<h2> Using Java Script </h2>
+<br>
+
+<form name="myForm" action="user-data-js.jsp" method="post"  onsubmit="return validateForm()">
+
+<table width="450px" >
+	
+	<tr>
+ 	<td valign="top">
+  	<label for="first_name">First Name *</label>
+ 	</td>
+ 	<td valign="top">
+ 	<input type="text" name="firstName"  maxlength="20" size="30" required> 
+ 	<br>	
+ 	</td>
+	</tr>
+
+	<tr>
+ 	<td valign="top">
+  	<label for="last_name">Last Name *</label>
+ 	</td>
+  
+ 	<td valign="top">
+ 	<input  type="text" name="last_name" maxlength="20" size="30" required>
+
+ 	</td>
+	</tr>
+
+
+	<tr>
+ 	<td valign="top">
+  	<label for="phoneNumber">Phone Number *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input  type="text" name="phoneno" maxlength="20" size="30" required>	
+ 	</td>
+	</tr>
+
+
+	<tr>
+ 	<td valign="top">
+  	<label for="Sex">Sex *</label>
+ 	</td>
+ 	<td valign="top">
+ 	<input type="radio" name="Sex" value="Male" required>Male </input>
+	<input type="radio" name="Sex" value="Female">Female </input>
+ 	</td>
+	</tr>
+
+	<tr>
+ 	<td valign="top">
+  	<label for="Age">Age *</label>
+ 	</td>
+ 	<td valign="top">
+ 
+ 	<div id="mycontainer">
+            <select id="AgeDropdownId" name="AgeDropdown">
+                <option value="0"><--Select Age--></option>
+        </select>
+        </div>
+   
+
+
+ 	</td>
+	</tr> 
+
+	<tr>
+ 	<td valign="top">
+  	<label for="Address">Address *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input  type="text" name="Address" maxlength="50" size="30" required>
+ 	</td>
+	</tr> 
+	
+	
+	<tr>
+ 	<td valign="top">
+  	<label for="City">City *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input  type="text" name="City" maxlength="50" size="30" required>
+ 	</td>
+	</tr>
+	
+	<tr>
+ 	<td valign="top">
+  	<label for="Country">Country *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input  type="text" name="Country" maxlength="50" size="30"required>
+ 	</td>
+	</tr>
+
+	<tr>
+ 	<td valign="top">
+  	<label for="Hobbies">Hobbies *</label>
+ 	</td>
+ 	<td valign="top">
+  	<input type="checkbox" name="Hobbies" value="Chess">Chess
+    <input type="checkbox" name="Hobbies" value="Tennis">Tennis
+   	<input type="checkbox" name="Hobbies" value="Soccer">Soccer
+ 	<input type="checkbox" name="Hobbies" value="Baseball">Baseball
+ 	<input type="checkbox" name="Hobbies" value="Skiing">Skiing
+ 	</td>
+	</tr>
+
+	
+
+	<tr>
+ 	<td valign="top">	
+ 	</td>
+ 	<td valign="top">
+
+  	<input type="submit" value = "Submit" class="sbmtBtn" />
+ 	</td>
+	</tr>
+
+ 
+ 	</table>
+ 			
+
+</form>
+
+
+</body>
+</html>
