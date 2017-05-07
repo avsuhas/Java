@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+ <style type="text/css">
+    html, body {
+    	margin: 0px;
+    	background: #ebebeb;
+    }
+    	.dropdown-content a {
+	    color: black;
+	    padding: 12px 16px;
+	    text-decoration: none;
+	    display: block;
+	}
+
+	.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+	
+ </style>
+
+<body>
+<div class="topnav" id="myTopnav">
+  <a href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+
+</div>
+<form action="../jsp/searchActorData.jsp" id=id >
+<br>
+<br>
+<center ><h3>Search by:	
+ 
+<select id="menu" name ="nameField"> </h3> 
+             <option value="null" selected="selected" >--- Please Select---</option>
+            <option> Only FirstName </option>
+            <option> Only LastName  </option>
+            <option> Or </option>
+            <option> And </option>
+            </select>
+
+<br><br>
+First Name <input id="first" type="text" name="firstName"/>
+Last Name <input id="last" type="text" name="lastName"/>
+<br><br>
+<input type="submit"/>
+<input type="reset"/>
+
+
+
+</center>
+</form>
+
+<script type="text/javascript">
+var menu = document.getElementById('menu');
+var first = document.getElementById('first');
+var last = document.getElementById('last');
+
+
+menu.onchange = function(){
+
+     var enableFirst = false, enableLast = false;
+    switch(menu.options.selectedIndex){
+        case 0:
+            enableFirst = false;
+            enableLast =  false;
+            break;
+        case 1:
+            enableFirst = true;
+            enableLast =  false;
+            break;
+        case 2:
+            enableFirst = false;
+            enableLast =  true;
+            break;
+        case 3:
+            enableFirst = true;
+            enableLast =  true;
+            break;
+        case 4:
+        	enableFirst = true;
+        	enableLast = true;
+
+        default:
+        	enableFirst = false;
+            enableLast =  false;
+            break;
+
+    }
+    first.disabled = !enableFirst;
+    last.disabled = !enableLast;
+
+
+}
+
+</script>
+
+</body>
+</html>
